@@ -1,11 +1,11 @@
 :root {
-  --background-color: #003249;
-  --display-color: white;
-  --button-color: #ccdbdc;
-  --button-highlight-color: #9ad1d4;
-  --button-text-color: #17455a;
-  --operator-button-color: #81a2b1;
-  --operator-button-highlight-color: #007ea7;
+  --background-color: #737373;
+  --text-color: white;
+  --display-color: #737373;
+  --number-button-color: #1f1f1f;
+  --number-button-highlight-color: #353535;
+  --function-button-color: #3b3b3b;
+  --function-button-highlight-color: #565656;
 }
 
 body {
@@ -18,48 +18,67 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 0.25em;
   background-color: var(--background-color);
-  width: 50vw;
+  width: 80vw;
+  max-width: 500px;
   height: 60vh;
   margin: 3em auto;
-  padding: 1em;
+  padding: 0.7em;
   border-radius: 0.2em;
-  box-shadow: 3px 3px 4px 1px #81a2b1;
+  box-shadow: 3px 3px 4px 1px var(--background-color);
 }
 
 #display {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
   height: 4em;
-  padding-right: 1em;
-  font-size: 1.2em;
-  font-weight: 600;
+  min-height: 4em;
+  padding: 0 0.5em;
   grid-column: 1 / -1;
   background-color: var(--display-color);
+  color: var(--text-color);
+}
+
+#outputDisplay {
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  text-align: right;
+  max-width: 80%;
+  line-height: 1em;
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--button-color);
-  border-radius: 0.2em;
+  background-color: var(--number-button-color);
+  color: var(--text-color);
   font-size: 1.5em;
-  font-weight: 600;
+  font-weight: 400;
+  border: none;
+  transform: scale(1);
 }
 
 .btn.number:hover {
-  background-color: var(--button-highlight-color);
+  background-color: var(--number-button-highlight-color);
 }
 
-.btn.operator {
-  background-color: var(--operator-button-color);
+.btn.function {
+  background-color: var(--function-button-color);
 }
 
-.btn.operator:hover {
-  background-color: var(--operator-button-highlight-color);
+.btn.function:hover {
+  background-color: var(--function-button-highlight-color);
 }
 
 .btn:focus {
   outline: none;
+}
+
+.btn:active {
+  transform: scale(0.9);
 }
