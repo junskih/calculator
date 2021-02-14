@@ -1,5 +1,5 @@
 :root {
-  --background-color: #737373;
+  --calc-background-color: #737373;
   --text-color: white;
   --display-color: #737373;
   --number-button-color: #1f1f1f;
@@ -11,35 +11,37 @@
 body {
   font-family: 'Questrial', sans-serif;
   margin: 0;
+  background-color: #3e3e3e;
 }
 
 #calc-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr repeat(5, 75px);
   grid-gap: 0.25em;
-  background-color: var(--background-color);
+  background-color: var(--calc-background-color);
   width: 80vw;
   max-width: 500px;
-  height: 60vh;
   margin: 3em auto;
   padding: 0.7em;
   border-radius: 0.2em;
-  box-shadow: 3px 3px 4px 1px var(--background-color);
+  box-shadow: 3px 3px 4px 1px var(--calc-background-color);
 }
 
 #display {
   display: flex;
+  flex: 1 0 auto;
   justify-content: flex-end;
   align-items: flex-start;
-  height: 4em;
-  min-height: 4em;
-  padding: 0 0.5em;
+  height: fit-content;
+  min-height: 6em;
+  padding: 0.5em;
   grid-column: 1 / -1;
   background-color: var(--display-color);
   color: var(--text-color);
 }
 
-#outputDisplay {
+#output-display {
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
   overflow-wrap: anywhere;
@@ -49,12 +51,10 @@ body {
   font-size: 2em;
   font-weight: 400;
   letter-spacing: 0;
+  margin: 0;
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: var(--number-button-color);
   color: var(--text-color);
   font-size: 1.5em;
