@@ -2,7 +2,7 @@
 keyboard support
 can divide by zero sometimes
 */
-const display = document.querySelector("#outputDisplay");
+const display = document.querySelector("#output-display");
 const output = [];
 
 // Event listeners
